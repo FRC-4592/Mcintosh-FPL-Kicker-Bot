@@ -40,18 +40,18 @@ public class Arm extends SubsystemFramework {
     }
     @Override
     public void update() {
-        if(ArmPower()) {
+        if(limiter.get() && ArmPower()) {
             shifter2.close();
             ArmMasterMotor.set(0.5);
-            if(limiter.get()) {
-                ArmMasterMotor.set(0);
-            }
         }
         else {
             ArmMasterMotor.set(0);
         }
         if(Release()){
             shifter2.open();
+        }
+        if(Hardware.driverPad.getRawButton(8)){
+            shifter2.close();
         }
 
     }
@@ -65,7 +65,7 @@ public class Arm extends SubsystemFramework {
     public void setupSensors() {
         // Setup Master Slave Relationship
         ArmSlaveMotor.follow(ArmMasterMotor);
-        ArmSlaveMotor.setInverted(true);
+        ArmSlaveMotor.setInverted(false);
 						
 		// Setup Master Encoders
 		ArmMasterMotor.setSensorPhase(true);

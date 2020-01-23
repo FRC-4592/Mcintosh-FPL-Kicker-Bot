@@ -25,7 +25,7 @@ public class Constants {
 
     // Arm Buttons
     public static final int ARM_POWER = 1;
-    public static final int RELEASE = 10;
+    public static final int RELEASE = 6;
 
     // Joystick
     public static final int DRIVE_USB_PORT = 0;

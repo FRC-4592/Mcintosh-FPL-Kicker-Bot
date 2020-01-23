@@ -60,7 +60,7 @@ public class Drivetrain extends SubsystemFramework {
 				shifter.close();
 	
 				// Joystick Control
-				myRobot.tankDrive((Hardware.driverPad.getRawAxis(1) * -1), (Hardware.driverPad.getRawAxis(4) * -1), false);
+				myRobot.tankDrive((Hardware.driverPad.getRawAxis(5) * -1), (Hardware.driverPad.getRawAxis(1) * -1), false);
 	
 				// Switch To HighGear When Asked
 				if (Hardware.driverPad.getRawButton(Constants.DRIVETRAIN_HIGHGEAR)) {
@@ -73,7 +73,7 @@ public class Drivetrain extends SubsystemFramework {
 				shifter.open();
 	
 				// Joystick Control
-				myRobot.tankDrive((Hardware.driverPad.getRawAxis(1) * -1), (Hardware.driverPad.getRawAxis(4) * -1),
+				myRobot.tankDrive((Hardware.driverPad.getRawAxis(5) * -1), (Hardware.driverPad.getRawAxis(1) * -1),
 						false);
 	
 				// Switch To LowGear When Asked
